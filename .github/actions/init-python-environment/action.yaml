@@ -4,7 +4,7 @@ inputs:
   python_version:
     description: Version of Python to use in the enviornment and install dependencies with
     type: string
-    default: "3.8.6"
+    default: "3.10.12"
   working_directory:
     type: string
     default: ""
