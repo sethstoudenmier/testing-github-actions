@@ -1,6 +1,16 @@
 name: Pull Request Checks
 
-on: push
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.base_ref }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   Run-Linting:
